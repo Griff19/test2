@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+.alert-error {
+    background-color: lightcoral;
+    width: 100%;
+    color: darkred;
+}
+.alert-cuccess {
+    background-color: #6cff93;
+    width: 100%;
+    color: darkgreen;
+}
+
+.container {
+    padding: 1px 15px 1px 15px;
+    overflow: auto;
+}
+
+.title {
+    margin: 0;
+    color: aliceblue;
+}
+
+.error {
+    font-size: smaller;
+    color: darkred;
+}
+
+.header {
+    background-color: darkslateblue;
+    height: 50px;
+    color: aliceblue;
+}
+
+.content {
+    min-height: 300px;
+    margin-bottom: 30px;
+}
+
+.menu {
+    background-color: aliceblue;
+    height: 30px
+}
+
+.footer {
+    background-color: darkslateblue;
+    height: 160px;
+    color: aliceblue;
+}
+
+.footer a {
+    color: aliceblue;
+}
+
+h1, h2, h3 {
+    color: darkslateblue;
+}
+
+.img-profile {
+    width: 350px;
+    margin-right: 1em;
+}
