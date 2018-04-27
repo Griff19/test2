@@ -30,7 +30,6 @@ class SiteController extends Controller
                 $this->redirect('user/view');
             } else {
                 Alert::setFlash('error', T::t('ACCESS_DENI'));
-                //return $this->render('login');
             }
         }
         return $this->render('login');

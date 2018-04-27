@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../zcore/Exception.php';
+require_once __DIR__ . '/../zcore/Helper.php';
 require_once __DIR__ . '/../zcore/Db.php';
 require_once __DIR__ . '/../zcore/Asset.php';
 require_once __DIR__ . '/../zcore/App.php';

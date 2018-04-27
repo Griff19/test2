@@ -14,10 +14,10 @@ class Menu
     /**
      * @param array $items =
      * [
-     *     ['item' => ['Page 1' => 'controller/action', 'title' => "String title"], 'visible' => true],
-     *     ['item' => ['Page 2' => 'controller/action'], 'visible' => false],
+     *     ['item' => ['Page 1' => 'controller/action', 'title' => "String title"]],
+     *     ['item' => ['Page 2' => 'controller/action', 'visible' => false]],
      *     ...     => ... ,
-     *     ['item' => ['Page n' => 'controller/action'], 'visible' => true],
+     *     ['item' => ['Page n' => 'controller/action']],
      * ]
      *
      */
@@ -31,14 +31,13 @@ class Menu
                     foreach ($values as $name => $value) {
                         if ($name == 'title'){
                             $str = str_replace("title=''", "title='$value'", $str);
+                        } elseif ($name == 'visible') {
+                            if (!$value) $str = '';
                         } else {
                             $str = "<a href='$value' title=''>$name</a> ";
                         }
                     }
-                } else {
-                    if ($key == 'visible' && $values) {
-                        echo $str;
-                    }
+                    echo $str;
                 }
             }
         }

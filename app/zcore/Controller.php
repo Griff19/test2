@@ -1,11 +1,12 @@
 <?php
-/**
- *
- */
+
 
 namespace core;
 
-
+/**
+ * Class Controller
+ * @package core
+ */
 class Controller
 {
 	public $dir_view;

@@ -7,6 +7,7 @@
  */
 
 namespace controllers;
+
 use core\App;
 use core\Controller;
 use models\User;
@@ -16,15 +17,11 @@ class UserController extends Controller
 	public $dir_view = 'user';
     
     /**
-     * @param int $id
      *
      */
-	public function actionView($id = null)
+	public function actionView()
 	{
         $user = App::user();
-        if (!$user) {
-            $user = User::findOne($id);
-        }
 		
 	    return $this->render('view', ['user' => $user]);
 	}
@@ -36,7 +33,7 @@ class UserController extends Controller
     {
         $model = new User;
     
-        if ($model->load($_POST)) {
+        if ($model->load($_POST) && $model->validate()) {
             $model->user_token = md5($model->login);
             $model->pass = $model->password;
             $model->loadfile();
@@ -48,6 +45,10 @@ class UserController extends Controller
         return $this->render('create');
     }
     
+    /**
+     * Checking the uniqueness of the login by ajax
+     * @param $login
+     */
     public function actionValidLogin($login)
     {
         if (User::findOne(['login' => $login])) {

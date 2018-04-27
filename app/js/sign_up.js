@@ -114,6 +114,7 @@ function validSnp() {
 /** Full check of the form before sending */
 function validForm() {
     let no_error = true;
+
     if (!validUniqLogin()) no_error = false;
     if (!validLogin(1)) no_error = false;
     if (!validPass1()) no_error = false;

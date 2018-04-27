@@ -40,7 +40,21 @@ body {
 
 .menu {
     background-color: aliceblue;
-    height: 30px
+    height: 30px;
+    line-height: 2em;
+}
+
+.menu a {
+    background-color: #a9a9a9;
+    padding: 6px;
+    text-decoration: none;
+    color: darkslateblue;
+    font-weight: 600;
+}
+
+.menu a:hover {
+    background-color: #777676;
+    color: aliceblue;
 }
 
 .footer {
