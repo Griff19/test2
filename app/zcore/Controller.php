@@ -35,7 +35,7 @@ class Controller
 	
 	public function redirect($target)
     {
-        header('Location:/' . $target);
+        header('Location:/' . App::$root . $target);
     }
 	
 }

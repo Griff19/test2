@@ -27,10 +27,6 @@ class App
         if (isset($config['js'])) {
             Asset::$js = $config['js'];
         }
-    }
-    
-    public static function getRoot()
-    {
         if (isset(App::$config['root']) && !empty(App::$config['root'])) {
             App::$root = App::$config['root'];
             App::$ic = 1;
