@@ -32,6 +32,7 @@ class App
             if (App::$root != '/') {
                 App::$ic = 1;
                 App::$ia = 2;
+                App::$root = App::$root . '/';
             }
         }
     }
