@@ -1,6 +1,6 @@
 /** Get translation of error messages by ajax */
 function t(str, target, mod = 0) {
-    $.post(_ROOT + 'translator/t', {str: str}, function (res) {
+    $.post(root.value + 'translator/t', {str: str}, function (res) {
         if (mod === 0) {
             target.innerHTML = JSON.parse(res);
         } else {
@@ -20,7 +20,7 @@ function validLogin(mod = 0) {
         t('LOGIN_INVALID', err_log);
         return false;
     } else if (mod === 0){
-        $.post(_ROOT + 'user/valid-login', {login: loginVal}, function(r){
+        $.post(root.value + 'user/valid-login', {login: loginVal}, function(r){
             let obj = JSON.parse(r);
             if (obj.res === true) {
                 err_log.innerHTML = loginVal + ' ';
@@ -39,7 +39,7 @@ function validUniqLogin() {
     let loginVal = login.value;
     $.ajax({
         type: 'POST',
-        url: _ROOT + 'user/valid-login',
+        url: root.value + 'user/valid-login',
         data: {login: loginVal},
         success: function (r) {
             let obj = JSON.parse(r);

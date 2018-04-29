@@ -15,7 +15,7 @@ use models\User;
     <link rel="icon" type="image/png" href="<?= App::$root ?><?= App::$config['template'] ?>/favicon.ico" />
 	<meta charset="utf-8">
 	<title><?= T::t('TITLE_TEST')?></title>
-    <script type="text/javascript">var _ROOT = <?= App::$root ?></script>
+    <input type="hidden" id="root" value="<?= App::$root ?>">
     <?= Asset::addJs(Asset::HEAD)?>
 </head>
 <body>
