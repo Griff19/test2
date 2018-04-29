@@ -13,9 +13,10 @@ use models\User;
 <head>
 	<link rel="stylesheet" href="<?= App::$root ?><?= App::$config['template'] ?>/style.min.css">
     <link rel="icon" type="image/png" href="<?= App::$root ?><?= App::$config['template'] ?>/favicon.ico" />
-	<?= Asset::addJs(Asset::HEAD)?>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 	<title><?= T::t('TITLE_TEST')?></title>
+    <script type="text/javascript">var _ROOT = <?= App::$root ?></script>
+    <?= Asset::addJs(Asset::HEAD)?>
 </head>
 <body>
 
