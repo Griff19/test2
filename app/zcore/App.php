@@ -29,8 +29,10 @@ class App
         }
         if (isset(App::$config['root']) && !empty(App::$config['root'])) {
             App::$root = App::$config['root'];
-            App::$ic = 1;
-            App::$ia = 2;
+            if (App::$root != '/') {
+                App::$ic = 1;
+                App::$ia = 2;
+            }
         }
     }
 
@@ -53,7 +55,7 @@ class App
     public static function getUrl()
     {
         $url = $_SERVER['REQUEST_URI'];
-        if (isset(App::$root))
+        if (isset(App::$root) && App::$root != '/')
             $url = str_replace(App::$root, '', $url);
         
         $url = trim($url, '/');

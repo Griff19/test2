@@ -7,5 +7,5 @@ return [
         'pass' => '',
         'base' => 'test',
     ],
-    'root' => '',
+    'root' => '/',
 ];
