@@ -41,7 +41,7 @@ class UserController extends Controller
             $model->pass = md5($model->password);
             $model->loadfile();
             if ($model->save()) {
-                Alert::setFlash('success', T::t('USER') . $model->login . T::t('ADDED'));
+                Alert::setFlash('success', T::t('USER') .' '. $model->login .' '. T::t('ADDED'));
                 $this->redirect('site/login');
             } else {
                 Alert::setFlash('error', T::t('ER_SVG_USR'));

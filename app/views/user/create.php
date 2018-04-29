@@ -44,9 +44,9 @@ if (array_key_exists('user', $GLOBALS)) {
         <div id="err_email" class="error"></div>
         <br/>
         
-        <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+        <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
         <label for="user_file"><?= T::t('ADD_IMAGE')?>:</label><br/>
-        <input id="user_file" name="user_file" type="file" accept="image/jpeg,image/gif,image/png"/><br/><br/>
+        <input id="user_file" name="user_file" type="file" accept="image/*"/><br/><br/>
         <label for="memo"><?= T::t('ABOUT_YOUSELF')?>:</label><br/>
         
         <textarea id="memo" name="memo" rows="3" cols="40"></textarea>

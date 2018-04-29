@@ -40,7 +40,7 @@ class T
             'CONFIRM_PASS'             => 'Confirm the password',
             'FILL_OUT_FORM'            => "For the registration in the system<br/>please fill out the form:",
             'FULL_NAME'                => 'Full Name',
-            'ADD_IMAGE'                => 'Add an image',
+            'ADD_IMAGE'                => 'Add an image (the file must not exceed 2 MB)',
             'ABOUT_YOUSELF'            => 'Add something about yourself',
             'SAVE'                     => 'Submit',
             'FILL_FIELD_LOGIN'         => 'Fill in the "Login"',
@@ -68,6 +68,7 @@ class T
             'WELCOME'                  => 'If you already have a Login and Password then',
             'FILE_LOAD'                => 'File successfully uploaded!',
             'FILE_ERROR'               => 'Error loading file!',
+            'MAX_SIZE'                 => 'The file size may be exceeded.',
             'LOGIN_AS'                 => 'You are authorized as',
             'FIELDS_STARS'             => '* - mandatory fields.'
         ];
@@ -102,7 +103,7 @@ class T
             'CONFIRM_PASS'             => 'Подтвердите пароль',
             'FILL_OUT_FORM'            => "Для регистрации в системе<br/>пожалуйста заполните форму:",
             'FULL_NAME'                => 'Фамиля Имя Отчество',
-            'ADD_IMAGE'                => 'Добавьте изображение',
+            'ADD_IMAGE'                => 'Добавьте изображение (файл не должен превышать 2 Мб)',
             'ABOUT_YOUSELF'            => 'Добавьте что-нибудь о себе',
             'SAVE'                     => 'Сохранить',
             'FILL_FIELD_LOGIN'         => 'Заполните поле "Логин"',
@@ -130,6 +131,7 @@ class T
             'WELCOME'                  => 'Если у Вас уже есть Логин и Пароль тогда Вы можете',
             'FILE_LOAD'                => 'Файл успешно загружен!',
             'FILE_ERROR'               => 'Ошибка загрузки файла!',
+            'MAX_SIZE'                 => 'Возможно превышен размер файла.',
             'LOGIN_AS'                 => 'Вы авторизованы как',
             'FIELDS_STARS'             => '* - поля, обязательные к заполнению.'
         ];

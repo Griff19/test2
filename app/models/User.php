@@ -147,8 +147,14 @@ class User extends Model
      */
     public function loadfile()
     {
-        if ($_FILES['user_file']['size'] <= 0)
+        
+        if ($_FILES['user_file']['size'] <= 0) {
+            if ($_FILES['user_file']['name'] != '' && $_FILES['user_file']['error'] > 0){
+                Alert::setFlash('error', T::t('MAX_SIZE'));
+                return false;
+            }
             return true;
+        }
         
         $upload_dir = __DIR__ .'/../img/';
         $file_name = md5(basename($_FILES['user_file']['name']));
