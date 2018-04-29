@@ -41,6 +41,6 @@ class Asset
      */
     public static function registerJsFile($file, $place = Asset::HEAD)
     {
-        Asset::$js[$file] = App::$root . $place;
+        Asset::$js[App::$root . $file] = $place;
     }
 }
