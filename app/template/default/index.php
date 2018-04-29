@@ -37,10 +37,9 @@ use models\User;
         $menu->menu($items);
     ?>
 	</div>
-	
+    <?= Alert::getFlash() ?>
 	<div class="container content">
-	<?= Alert::getFlash() ?>
-	<?= $content ?>
+	    <?= $content ?>
 	</div>
     
     <div class="container footer">
