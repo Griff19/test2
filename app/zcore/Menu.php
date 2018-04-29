@@ -8,6 +8,7 @@
 
 namespace core;
 
+use core\Helper;
 
 class Menu
 {
@@ -34,8 +35,7 @@ class Menu
                         } elseif ($name == 'visible') {
                             if (!$value) $str = '';
                         } else {
-                            $href = App::$root . $value;
-                            $str = "<a href='$href' title=''>$name</a> ";
+                            $str = "<a href='".Helper::url($value)."' title=''>$name</a> ";
                         }
                     }
                     echo $str;
