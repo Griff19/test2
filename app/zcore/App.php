@@ -73,15 +73,11 @@ class App
         $controller_name = 'Site';
         $action_name = 'Index';
         $error = false;
+        
         /** Disassemble the URL string for the isolation of the Class and Method */
-        $url = $_SERVER['REQUEST_URI'];
-        if (isset(App::$root) && App::$root != '/')
-            $url = str_replace(App::$root, '', $url);
-        $pars_url = trim($url, '/');
-        //$pars_url = parse_url(trim($_SERVER['REQUEST_URI'], '/'));
-        //$route = explode('/', $pars_url['path']);
-        $route = explode('/', $pars_url);
-    
+        $pars_url = parse_url(trim($_SERVER['REQUEST_URI'], '/'));
+        $route = explode('/', $pars_url['path']);
+        
         /** Define the controller class */
         if (isset($route[App::$ic]) && !empty($route[App::$ic])) {
             $controller_name = $route[App::$ic];
