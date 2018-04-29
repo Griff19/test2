@@ -43,6 +43,7 @@ class User extends Model
      * @param $login
      * @param $password
      * @return bool
+     * @throws \core\Exception
      */
     public static function validUser($login, $password)
     {
@@ -53,7 +54,7 @@ class User extends Model
             return false;
         }
         
-        $prepare->execute(['login' => $login, 'pass' => $password]);
+        $prepare->execute(['login' => $login, 'pass' => md5($password)]);
         
         $res = $prepare->fetch(\PDO::FETCH_LAZY);
         

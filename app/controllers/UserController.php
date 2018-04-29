@@ -35,7 +35,7 @@ class UserController extends Controller
     
         if ($model->load($_POST) && $model->validate()) {
             $model->user_token = md5($model->login);
-            $model->pass = $model->password;
+            $model->pass = md5($model->password);
             $model->loadfile();
             if ($model->save()) {
                 $this->redirect('site/index');
