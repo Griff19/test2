@@ -30,8 +30,8 @@ class App
         if (isset(App::$config['root']) && !empty(App::$config['root'])) {
             App::$root = App::$config['root'];
             if (App::$root != '/') {
-                App::$ic = 1;
-                App::$ia = 2;
+                //App::$ic = 1;
+                //App::$ia = 2;
                 App::$root = App::$root . '/';
             }
         }
