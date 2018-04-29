@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+isset($_SESSION['count']) ?: $_SESSION['count'] = 0;
 
 require_once 'app/config/bootstrap.php';
 

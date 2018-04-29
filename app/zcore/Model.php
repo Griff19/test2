@@ -81,6 +81,7 @@ class Model
     /**
      * Save the model in the database
      * @return bool
+     * @throws Exception
      */
     public function save()
     {
@@ -101,7 +102,7 @@ class Model
         $prepare->execute($this->fieldsToArrSql());
         
         if ($prepare->errorCode()) {
-            echo print_r($prepare->errorInfo());
+            //echo print_r($prepare->errorInfo());
         }
         $this->id = $db->connection->lastInsertId();
         $prepare = null;

@@ -11,16 +11,27 @@ namespace core;
 
 class Alert
 {
+    public static $mess;
+    /**
+     *
+     */
     public static function getFlash()
     {
+        $_SESSION['count']++;
         if (isset($_SESSION['error'])) {
-            echo '<div class="alert-error">' . $_SESSION['error'] . '</div>';
-            unset($_SESSION['error']);
+            echo '<div class="alert-error">' . $_SESSION['error'] .'</div>';
+            if ($_SESSION['count'] > 1) {
+                unset($_SESSION['error']);
+            }
+            
         }
         if (isset($_SESSION['success'])) {
-            echo '<div class="alert-success">' . $_SESSION['success'] . '</div>';
-            unset($_SESSION['success']);
+            echo '<div class="alert-success">' . $_SESSION['success'] .'</div>';
+            if ($_SESSION['count'] > 1) {
+                unset($_SESSION['success']);
+            }
         }
+        
     }
     
     /**
@@ -31,5 +42,6 @@ class Alert
     public static function setFlash($type, $message)
     {
         $_SESSION[$type] = $message;
+        $_SESSION['count'] = 0;
     }
 }

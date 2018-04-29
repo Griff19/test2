@@ -25,7 +25,7 @@ class Controller
 	public function render($view, $params = [])
 	{
 		extract($params);
-	    
+     
 	    ob_start();
 		include __DIR__ . '/../views/' . $this->dir_view . '/' . $view . '.php';
 		$content = ob_get_contents();

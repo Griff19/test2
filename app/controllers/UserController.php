@@ -44,7 +44,7 @@ class UserController extends Controller
                 Alert::setFlash('success', T::t('USER') . $model->login . T::t('ADDED'));
                 $this->redirect('site/login');
             } else {
-                Alert::setFlash('success', T::t('ER_SVG_USR'));
+                Alert::setFlash('error', T::t('ER_SVG_USR'));
             }
         }
         return $this->render('create');

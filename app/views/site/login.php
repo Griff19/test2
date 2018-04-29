@@ -20,6 +20,6 @@ use core\App;
 
 <p>
     <?= T::t('OR_YOU_CAN')?>
-    <a href="/user/create"><?= T::t('REGISTER')?></a>
+    <a href="<?= App::$root ?>user/create"><?= T::t('REGISTER')?></a>
     <?= T::t('IN_THE_SYSTEM')?>
 </p>
