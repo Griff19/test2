@@ -20,4 +20,9 @@ class Helper
         $s = stripslashes($s);
         return $s;
     }
+    
+    public static function url($url)
+    {
+        return App::$root . $url;
+    }
 }
