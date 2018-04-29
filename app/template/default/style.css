@@ -14,7 +14,7 @@ body {
 
 .container {
     padding: 1px 15px 1px 15px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .title {
@@ -52,7 +52,8 @@ body {
     font-weight: 600;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a:focus{
     background-color: #777676;
     color: aliceblue;
 }
@@ -74,4 +75,10 @@ h1, h2, h3 {
 .img-profile {
     width: 350px;
     margin-right: 1em;
+}
+
+.img-conteiner {
+    float: left;
+    min-height: 300px;
+    min-width: 200px;
 }

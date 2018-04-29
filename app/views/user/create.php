@@ -57,4 +57,4 @@ if (array_key_exists('user', $GLOBALS)) {
     <?= T::t('FIELDS_STARS')?>
 </div>
 
-<?php Asset::registerJsFile('/app/js/sign_up.js', Asset::BODY)?>
+<?php Asset::registerJsFile('/app/js/sign_up.min.js', Asset::BODY)?>

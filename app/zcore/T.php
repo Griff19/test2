@@ -54,10 +54,10 @@ class T
             'CONTAIN_ONLY_LETTERS'     => 'Full Name must contain only letters',
             'INVALID_EMAIL'            => 'Invalid "Email"',
             'ENTER_PASS'               => 'Enter password',
-            'PAGE_404'                 => '404 The requested page is not found',
+            'PAGE_404'                 => 'The requested page is not found',
             'USER'                     => 'User',
             'ADDED'                    => 'added successfully.<br/>Use your username and password to access the profile.',
-            'SR_ERROR'                 => '503 Server error',
+            'PAGE_503'                 => 'Server error',
             'DB_ERROR'                 => 'Error connecting to database. Contact your administrator.',
             'PASS_TO_EASY'             => 'The password is too simple, it is recommended to complicate it...',
             'LOGIN_INVALID'            => 'Invalid Login',
@@ -115,10 +115,10 @@ class T
             'CONTAIN_ONLY_LETTERS'     => 'ФИО должно содержать только буквы',
             'INVALID_EMAIL'            => 'Не правильное значение "Email"',
             'ENTER_PASS'               => 'Введите пароль',
-            'PAGE_404'                 => '404 Запрашиваемая страница не найдена',
+            'PAGE_404'                 => 'Запрашиваемая страница не найдена',
             'USER'                     => 'Пользователь',
             'ADDED'                    => 'успешно добавлен.<br/>Используйте свой логин и пароль чтобы войти в профиль.',
-            'SR_ERROR'                 => '503 Ошибка сервера',
+            'PAGE_503'                 => 'Ошибка сервера',
             'DB_ERROR'                 => 'Ошибка подключения к базе данных. Обратитесь к администратору.',
             'PASS_TO_EASY'             => 'Пароль слишком простой, рекомендуем усложнить его...',
             'LOGIN_INVALID'            => 'Логин содержит недопустимый символ',
@@ -138,12 +138,12 @@ class T
      * @param $cons
      * @return mixed
      */
-    public static function t($cons)
+    public static function t($cons, $lang = null)
     {
-        if ($_SESSION['lang'] == 'ru') {
-            return self::arrayRu()[$cons];
-        } else {
+        if ($_SESSION['lang'] == 'en' || $lang == 'en') {
             return self::arrayEn()[$cons];
+        } else {
+            return self::arrayRu()[$cons];
         }
     }
     

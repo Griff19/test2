@@ -1,12 +1,12 @@
 /** Get translation of error messages by ajax */
 function t(str, target, mod = 0) {
     $.post('/translator/t', {str: str}, function (res) {
-        if (mod === 0)
+        if (mod === 0) {
             target.innerHTML = JSON.parse(res);
-        else
+        } else {
             target.innerHTML += JSON.parse(res);
+        }
     });
-
 }
 
 /** Verify that the login is correct */

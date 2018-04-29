@@ -6,7 +6,7 @@ use core\T;
  */
 ?>
 <h1><?= T::t('PAGE_PROFILE') ?> "<?= $user->login ?>"</h1>
-<div style="float: left; ">
+<div class="img-conteiner">
     <img class="img-profile" src="/app/<?= $user->link_file ?>" alt="<?= $user->snp ?>"/>
 </div>
 <div>

@@ -26,10 +26,19 @@ class Db
     {
         $config = require(__DIR__ . '/../config/local.php');
         
-        $this->host = $config['db']['host'];
-        $this->user = $config['db']['user'];
-        $this->pass = $config['db']['pass'];
-        $this->base = $config['db']['base'];
+        if (isset($config['db'])) {
+            $this->host = $config['db']['host'];
+            $this->user = $config['db']['user'];
+            $this->pass = $config['db']['pass'];
+            $this->base = $config['db']['base'];
+        } else {
+            if (php_sapi_name() == 'cli') {
+                throw new \Exception('There are no connection settings for the Database', 500);
+                
+            } else {
+                throw new Exception(T::t('DB_ERROR', 'en'), 500);
+            }
+        }
         
         try {
             $connect = new \PDO('mysql:host=' . $this->host . ';dbname=' . $this->base, $this->user, $this->pass);

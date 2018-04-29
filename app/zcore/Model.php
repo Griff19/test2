@@ -13,15 +13,25 @@ use models\User;
 class Model
 {
 	public $id;
+	public $db;
  
 	public static function tableName()
     {
         return '';
     }
     
+    /**
+     * Model constructor.
+     * @throws Exception
+     */
     function __construct()
     {
-        $this->db = (new Db)->connection;
+        try {
+            $db       = new Db;
+            $this->db = $db->connection;
+        } catch (Exception $exception) {
+            echo 'схватили исключение: ' . $exception; die;
+        }
     }
     
     public function getTable()

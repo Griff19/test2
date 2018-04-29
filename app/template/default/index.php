@@ -9,7 +9,7 @@ use models\User;
 ?>
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="<?= T::t('LANG')?>">
 <head>
 	<link rel="stylesheet" href="<?= App::$config['template'] ?>/style.min.css">
     <link rel="icon" type="image/png" href="<?= App::$config['template'] ?>/favicon.ico" />
@@ -43,10 +43,9 @@ use models\User;
 	</div>
     
     <div class="container footer">
-        <p>
-        2018 &copy; Gredasov Ivan <br />
+        <p>2018 &copy; Gredasov Ivan <br />
         <a href="mailto:griff19@mail.ru">griff19@mail.ru</a> <br />
-        <a href="https://github.com/Griff19">https://github.com/Griff19</a> <br />
+        <a href="https://github.com/Griff19">github.com/Griff19</a> <br />
         </p>
     </div>
     <?= Asset::addJs(Asset::BODY)?>

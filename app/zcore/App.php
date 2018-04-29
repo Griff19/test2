@@ -13,6 +13,9 @@ use models\User;
 class App
 {
     public static $config;
+    public static $root;
+    public static $ic = 0; //index controller
+    public static $ia = 1; //index action
     
     /**
      * App constructor.
@@ -26,6 +29,15 @@ class App
         }
     }
     
+    public static function getRoot()
+    {
+        if (isset(App::$config['root']) && !empty(App::$config['root'])) {
+            App::$root = App::$config['root'];
+            App::$ic = 1;
+            App::$ia = 2;
+        }
+    }
+
     /**
      * @return mixed
      */
@@ -62,8 +74,8 @@ class App
         $route = explode('/', $pars_url['path']);
     
         /** Define the controller class */
-        if (isset($route[0]) && !empty($route[0])) {
-            $controller_name = $route[0];
+        if (isset($route[App::$ic]) && !empty($route[App::$ic])) {
+            $controller_name = $route[App::$ic];
             $model_name = '\models\\' . ucfirst($controller_name);
             $model_file = ucfirst($controller_name) . '.php';
             if (file_exists('app'. $model_name . '.php')) {
@@ -78,8 +90,8 @@ class App
             require_once __DIR__ . '/../controllers/' . $controller_file;
     
             /** If the controller is found, we define the class method */
-            if (isset($route[1])) {
-                $action_name = $route[1];
+            if (isset($route[App::$ia])) {
+                $action_name = $route[App::$ia];
                 $action_name = str_ireplace('-', ' ', $action_name);
                 $action_name = ucwords($action_name);
                 $action_name = str_replace(' ', '', $action_name);
@@ -93,8 +105,9 @@ class App
         }
         
         if ($error) {
-            $controller_name = '\controllers\SiteController';
-            $action_name = 'actionError';
+            //$controller_name = '\controllers\SiteController';
+            //$action_name = 'actionError';
+            throw new Exception(T::t('PAGE_404'), 404);
         }
         
         $controller = new $controller_name;

@@ -12,9 +12,10 @@ class Controller
 	public $dir_view;
 	public $template = __DIR__ . '/../template/default/index.php';
 	
-	public function renderAjax($view)
+	public function renderAjax($view, $params = [])
 	{
-		include __DIR__ . '/../views/' . $this->dir_view . '/' . $view . '.php';
+		extract($params);
+	    include __DIR__ . '/../views/' . $this->dir_view . '/' . $view . '.php';
 	}
 	
 	/**
