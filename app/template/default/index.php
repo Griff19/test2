@@ -25,13 +25,13 @@ use models\User;
 	<div class="container menu">
     <?php
         $menu = new Menu();
-        $items[] = ['item' => [T::t('LINK_HOME') => '/site/index', 'title' => T::t('HOME_PAGE')]];
-        $items[] = ['item' => [T::t('LINK_SIGN_IN') => '/site/login', 'visible' => !User::isLogin()]];
-        $items[] = ['item' => [T::t('LINK_SIGN_UP') => '/user/create', 'visible' => !User::isLogin()]];
+        $items[] = ['item' => [T::t('LINK_HOME') => 'site/index', 'title' => T::t('HOME_PAGE')]];
+        $items[] = ['item' => [T::t('LINK_SIGN_IN') => 'site/login', 'visible' => !User::isLogin()]];
+        $items[] = ['item' => [T::t('LINK_SIGN_UP') => 'user/create', 'visible' => !User::isLogin()]];
         if (User::isLogin())
             $items[] = ['item' => [T::t('LINK_PROFILE') . ' ('.App::user()->login.')' => '/user/view']];
-        $items[] = ['item' => [T::t('LINK_EXIT') => '/site/logout', 'visible' => User::isLogin()]];
-        $items[] = ['item' => [T::t('CH_LANGUAGE') => '/translator/ch-lang?target=' . App::getUrl(), 'title' => T::t('CH_LANG_TITLE')]];
+        $items[] = ['item' => [T::t('LINK_EXIT') => 'site/logout', 'visible' => User::isLogin()]];
+        $items[] = ['item' => [T::t('CH_LANGUAGE') => 'translator/ch-lang?target=' . App::getUrl(), 'title' => T::t('CH_LANG_TITLE')]];
         
         $menu->menu($items);
     ?>
