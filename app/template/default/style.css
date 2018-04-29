@@ -40,7 +40,7 @@ body {
 
 .menu {
     background-color: aliceblue;
-    height: 30px;
+    height: auto;
     line-height: 2em;
 }
 
