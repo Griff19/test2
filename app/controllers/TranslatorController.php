@@ -22,6 +22,6 @@ class TranslatorController extends Controller
     public function actionChLang($target)
     {
         T::setLang();
-        $this->redirect('/'.$target);
+        $this->redirect($target);
     }
 }
