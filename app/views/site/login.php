@@ -3,12 +3,12 @@
  * Login form
  */
 use core\T;
-
+use core\App;
 ?>
 
 <h2> <?= T::t('ENTER_LOGIN_AND_PASSWORD')?> </h2>
 
-<form action="/site/login" method="post">
+<form action="<?= App::$root ?>site/login" method="post">
     <label> <?= T::t('USR_LOGIN')?>: </label><br/>
     <input name="login" type="text" size="15" maxlength="15"><br/>
     
