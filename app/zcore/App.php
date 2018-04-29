@@ -53,7 +53,7 @@ class App
     public static function getUrl()
     {
         $url = trim($_SERVER['REQUEST_URI'], '/');
-        if (App::$root)
+        if (isset(App::$root))
             $url = str_replace(App::$root, '', $url);
         
         return $url;
