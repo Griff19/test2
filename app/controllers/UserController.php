@@ -8,8 +8,10 @@
 
 namespace controllers;
 
+use core\Alert;
 use core\App;
 use core\Controller;
+use core\T;
 use models\User;
 
 class UserController extends Controller
@@ -27,7 +29,8 @@ class UserController extends Controller
 	}
  
 	/**
-     * Create new user
+     * Create new User
+     *
      */
 	public function actionCreate()
     {
@@ -38,10 +41,12 @@ class UserController extends Controller
             $model->pass = md5($model->password);
             $model->loadfile();
             if ($model->save()) {
-                $this->redirect('site/index');
+                Alert::setFlash('success', T::t('USER') . $model->login . T::t('ADDED'));
+                $this->redirect('site/login');
+            } else {
+                Alert::setFlash('success', T::t('ER_SVG_USR'));
             }
         }
-        
         return $this->render('create');
     }
     
