@@ -44,6 +44,10 @@ class SiteController extends Controller
         return $this->redirect('site/index');
     }
     
+    /**
+     * @param string $message
+     * @param int    $code
+     */
     public function actionError($message = '', $code = 0)
     {
         $method = 0;
