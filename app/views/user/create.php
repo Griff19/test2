@@ -8,6 +8,7 @@
 
 use core\T;
 use core\Asset;
+use core\Helper;
 
 if (array_key_exists('user', $GLOBALS)) {
     $user = unserialize($GLOBALS['user']);
@@ -16,7 +17,7 @@ if (array_key_exists('user', $GLOBALS)) {
 ?>
 <div>
     <h2><?= T::t('FILL_OUT_FORM')?></h2>
-    <form enctype="multipart/form-data" action="/user/create" method="post"
+    <form enctype="multipart/form-data" action="<?= Helper::url('user/create')?>" method="post"
           onsubmit="return validForm();">
         <label for="login"> * <?= T::t('USR_LOGIN')?>: </label><br/>
         <input id="login" name="login" type="text" value="<?= isset($user) ? $user->login : '' ?>" size="20" maxlength="255"
