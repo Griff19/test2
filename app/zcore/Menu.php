@@ -34,7 +34,8 @@ class Menu
                         } elseif ($name == 'visible') {
                             if (!$value) $str = '';
                         } else {
-                            $str = "<a href='$value' title=''>$name</a> ";
+                            $href = App::$root . $value;
+                            $str = "<a href='$href' title=''>$name</a> ";
                         }
                     }
                     echo $str;
