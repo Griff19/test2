@@ -11,8 +11,8 @@ use models\User;
 <!DOCTYPE html>
 <html lang="<?= T::t('LANG')?>">
 <head>
-	<link rel="stylesheet" href="<?= App::$config['template'] ?>/style.min.css">
-    <link rel="icon" type="image/png" href="<?= App::$config['template'] ?>/favicon.ico" />
+	<link rel="stylesheet" href="<?= App::$root ?><?= App::$config['template'] ?>/style.min.css">
+    <link rel="icon" type="image/png" href="<?= App::$root ?><?= App::$config['template'] ?>/favicon.ico" />
 	<?= Asset::addJs(Asset::HEAD)?>
     <meta charset="utf-8">
 	<title><?= T::t('TITLE_TEST')?></title>

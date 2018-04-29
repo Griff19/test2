@@ -52,7 +52,11 @@ class App
      */
     public static function getUrl()
     {
-        return trim($_SERVER['REQUEST_URI'], '/');
+        $url = trim($_SERVER['REQUEST_URI'], '/');
+        if (App::$root)
+            $url = str_replace(App::$root, '', $url);
+        
+        return $url;
     }
     
     /**
