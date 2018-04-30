@@ -8,7 +8,6 @@
 
 namespace core;
 
-use core\Helper;
 
 class Menu
 {

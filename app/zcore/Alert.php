@@ -17,21 +17,14 @@ class Alert
      */
     public static function getFlash()
     {
-        $_SESSION['count']++;
         if (isset($_SESSION['error'])) {
             echo '<div class="alert alert-error">' . $_SESSION['error'] .'</div>';
-            if ($_SESSION['count'] > 1) {
-                unset($_SESSION['error']);
-            }
-            
+            unset($_SESSION['error']);
         }
         if (isset($_SESSION['success'])) {
             echo '<div class="alert alert-success">' . $_SESSION['success'] .'</div>';
-            if ($_SESSION['count'] > 1) {
-                unset($_SESSION['success']);
-            }
+            unset($_SESSION['success']);
         }
-        
     }
     
     /**

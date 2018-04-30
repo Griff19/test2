@@ -42,7 +42,7 @@ class UserController extends Controller
             $model->loadfile();
             if ($model->save()) {
                 Alert::setFlash('success', T::t('USER') .' '. $model->login .' '. T::t('ADDED'));
-                $this->redirect('site/login');
+                return $this->redirect('site/login');
             } else {
                 Alert::setFlash('error', T::t('ER_SVG_USR'));
             }

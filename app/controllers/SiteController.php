@@ -19,7 +19,7 @@ class SiteController extends Controller
         return $this->render('index');
     }
     
-    public function actionLogin()
+    public function actionLogin($success = false)
     {
         if (isset($_POST['login']) && isset($_POST['password'])){
             /** @var User $user */

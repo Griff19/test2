@@ -5,7 +5,7 @@ use core\Alert;
 use core\T;
 use core\Menu;
 use models\User;
-/** @var $content string - формируется в zcore/Controller.php */
+/** @var $content string - формируется в zcore/Controller->render() */
 ?>
 
 <!DOCTYPE html>
