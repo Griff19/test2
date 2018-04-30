@@ -26,7 +26,7 @@ if (trim($s) == "y") {
         exit();
     }
     chmod('index.php', 0644);
-    
+    chmod(__DIR__, 0755);
     echo "Create Users table...\n";
     try {
         $db = new Db;
