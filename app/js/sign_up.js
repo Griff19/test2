@@ -35,20 +35,20 @@ function validLogin(mod = 0) {
 
 /** Synchronous check of uniqueness of login */
 function validUniqLogin() {
-    let res = false;
     let loginVal = login.value;
+    let ajax =
     $.ajax({
         type: 'POST',
         url: root.value + 'user/valid-login',
         data: {login: loginVal},
-        success: function (r) {
-            let obj = JSON.parse(r);
-            res = obj.res;
-        },
         dataType: 'json',
         async:false
     });
-    return res;
+    a = JSON.parse(ajax.responseText);
+    if (a.res) {
+        t('NAME_USED', err_log);
+    }
+    return a.res;
 }
 
 /** Verify that the password is correct */
@@ -115,7 +115,7 @@ function validSnp() {
 function validForm() {
     let no_error = true;
 
-    if (!validUniqLogin()) no_error = false;
+    if (validUniqLogin()) no_error = false;
     if (!validLogin(1)) no_error = false;
     if (!validPass1()) no_error = false;
     if (!validPass2()) no_error = false;

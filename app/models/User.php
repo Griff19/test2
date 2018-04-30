@@ -95,7 +95,7 @@ class User extends Model
             } elseif ($this->validLogin()) {
                 $this->login = Helper::safetyStr($this->login);
             } else {
-                $str_err .= T::t('LOGIN_EXIST') . '<br/>';
+                $str_err .= T::t('LOGIN_EXIST') .' ('. $this->login .')<br/>';
             }
         }
         

@@ -1,19 +1,22 @@
 body {
     margin: 0;
 }
+.alert {
+    width: 100%;
+    padding: 10px;
+}
+
 .alert-error {
     background-color: lightcoral;
-    width: 100%;
     color: darkred;
 }
 .alert-success {
     background-color: #6cff93;
-    width: 100%;
     color: darkgreen;
 }
 
 .container {
-    padding: 1px 15px 1px 15px;
+    padding: 1px 35px 1px 15px;
     overflow: hidden;
 }
 

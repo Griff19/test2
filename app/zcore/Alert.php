@@ -19,14 +19,14 @@ class Alert
     {
         $_SESSION['count']++;
         if (isset($_SESSION['error'])) {
-            echo '<div class="alert-error">' . $_SESSION['error'] .'</div>';
+            echo '<div class="alert alert-error">' . $_SESSION['error'] .'</div>';
             if ($_SESSION['count'] > 1) {
                 unset($_SESSION['error']);
             }
             
         }
         if (isset($_SESSION['success'])) {
-            echo '<div class="alert-success">' . $_SESSION['success'] .'</div>';
+            echo '<div class="alert alert-success">' . $_SESSION['success'] .'</div>';
             if ($_SESSION['count'] > 1) {
                 unset($_SESSION['success']);
             }
