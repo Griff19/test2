@@ -5,7 +5,7 @@
  * Date: 28.04.2018
  * Time: 16:02
  */
-require_once __DIR__ . '/app/zcore/Exception.php';
+
 require_once __DIR__ . '/app/zcore/Db.php';
 
 
@@ -25,6 +25,8 @@ if (trim($s) == "y") {
         echo "Please specify the settings for connecting to the database in the config/local.php file. See README.md\n";
         exit();
     }
+    chmod('index.php', 0644);
+    
     echo "Create Users table...\n";
     try {
         $db = new Db;
@@ -33,7 +35,7 @@ if (trim($s) == "y") {
             exit();
         }
     } catch (\Exception $e) {
-        echo 'Error: '. $e->getMessage();
+        echo 'Error: '. $e->getMessage() . "\n";
         exit();
     }
     
