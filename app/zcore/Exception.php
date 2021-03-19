@@ -16,6 +16,6 @@ class Exception extends \Exception
     {
         parent::__construct($message, $code, $previous);
         
-        header('Location: /site/error?message=' . $message . '&code=' . $code);
+        header('Location: site/error?message=' . $message . '&code=' . $code);
     }
 }
